@@ -8,7 +8,7 @@ interface Tailor {
 }
 interface Form { city: string; category: string; specialty: string; }
 
-const BASE = "${import.meta.env.VITE_API_URL}/user/findtailor";
+const BASE = `${import.meta.env.VITE_API_URL}/user/findtailor`;
 
 const CATS = [
   { val:"Men",      ico:"👔", label:"Men's Wear"      },
