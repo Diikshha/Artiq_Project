@@ -7,7 +7,7 @@ var userRouter = require("./routers/userRouters");
 var app = express();
 
 app.use(cors({
-  origin: "*",
+  origin: ["https://artiq-project.vercel.app", "http://localhost:5173"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
