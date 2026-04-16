@@ -6,8 +6,8 @@ var userRouter = require("./routers/userRouters");
 
 var app = express();
 
-// Handle OPTIONS preflight requests first
-app.options("*", cors());
+// Express 5 wildcard syntax
+app.options("/{*path}", cors());
 
 app.use(cors({
   origin: "https://artiq-project.vercel.app",
