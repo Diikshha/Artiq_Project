@@ -13,15 +13,19 @@ app.use(cors({
   credentials: true
 }));
 
-app.options("*", cors()); // works fine in Express 4
+app.options("*", cors());
 
 app.use(express.json({ limit: "15mb" }));
 app.use(express.urlencoded({ extended: true }));
 
+// ✅ Connect to DB before every request (required for serverless)
+app.use(async (req, res, next) => {
+  await connectToMongoDB();
+  next();
+});
+
 app.use("/api", userRouter);
 app.use("/user", userRouter);
-
-connectToMongoDB();
 
 app.use((req, res) => {
   res.status(404).send("Invalid URL");
