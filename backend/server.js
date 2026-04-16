@@ -7,9 +7,11 @@ var userRouter = require("./routers/userRouters");
 var app = express();
 
 app.use(cors({
-  origin: ["https://artiq-project.vercel.app", "http://localhost:5173"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
+  origin: "https://artiq-project.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200
 }));
 
 app.use(express.json({ limit: "15mb" }));
