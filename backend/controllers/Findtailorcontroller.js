@@ -2,7 +2,7 @@
 // findTailorController.js
 // ═══════════════════════════════════════════════════════════════════════════════
 
-const TailorProfile = require("../models/tailorProfiles");
+const TailorProfile = require("../models/TailorProfiles");
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 1. GET /user/findtailor/cities

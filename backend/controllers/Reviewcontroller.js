@@ -1,5 +1,5 @@
 const ReviewRef        = require("../models/Reviews");
-const TailorProfileRef = require("../models/tailorProfiles");   // ← THIS WAS MISSING
+const TailorProfileRef = require("../models/TailorProfiles");   // ← THIS WAS MISSING
 
 // ── GET tailor name by mobile (called onBlur) ─────────────────────────────
 //  Route: POST /user/getTailorByMobile

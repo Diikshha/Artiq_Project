@@ -1,4 +1,4 @@
-const TailorProfile = require("../models/tailorProfiles");
+const TailorProfile = require("../models/TailorProfiles");
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  HELPERS
