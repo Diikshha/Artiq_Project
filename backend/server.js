@@ -6,6 +6,9 @@ var userRouter = require("./routers/userRouters");
 
 var app = express();
 
+// Handle OPTIONS preflight requests first
+app.options("*", cors());
+
 app.use(cors({
   origin: "https://artiq-project.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -23,11 +26,9 @@ app.use("/user", userRouter);
 connectToMongoDB();
 
 app.use((req, res) => {
-  console.log(req.method, req.url);
   res.status(404).send("Invalid URL");
 });
 
-// Only listen locally, NOT on Vercel
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
